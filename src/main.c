@@ -136,6 +136,7 @@ int main( int argc, char **argv)
     signal(SIGILL, sig_handler);
 #endif  
     
+    exit(1);
     while( -1 != (item = getopt_long(argc, argv, option_string, options, &opt_index)) ) {
         switch( item ) {
             case 'p':
@@ -245,7 +246,7 @@ int main( int argc, char **argv)
     if( NULL != firewall_cmd )      aker_free( firewall_cmd );
     if( NULL != cfg.parodus_url )   aker_free( (char*) cfg.parodus_url );
     if( NULL != cfg.client_url )    aker_free( (char*) cfg.client_url );
-
+    
     return rv;
 }
 
